@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="addP()">新增一个p标签</button>
+<div id="div1">
+
+</div>
+
+<script>
+    function addP(){
+        var pelement = document.createElement("p");
+        var pnode = document.createTextNode("这是一个新的p标签里面的文字");
+        pelement.appendChild(pnode);
+        var element = document.getElementById("div1");
+        element.appendChild(pelement);
+    }
+
+</script>
+
+</body>
+</html>
