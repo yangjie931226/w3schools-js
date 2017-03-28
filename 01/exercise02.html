@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="addP()">在分割线前新增一个p标签</button>
+<button onclick="addP1()">在分割线后新增一个p标签</button>
+<div id="div1">
+    <p id="fengexian">-----------------这是一条分割线</p>
+</div>
+
+<script>
+    function addP(){
+        var pelement = document.createElement("p");
+        var pnode = document.createTextNode("这是一个新的p标签里面的文字");
+        pelement.appendChild(pnode);
+        var element = document.getElementById("div1");
+        var child = document.getElementById("fengexian");
+        element.insertBefore(pelement,child);
+    }
+    function addP1(){
+        var pelement = document.createElement("p");
+        var pnode = document.createTextNode("这是一个新的p标签里面的文字");
+        pelement.appendChild(pnode);
+        var element = document.getElementById("div1");
+        element.appendChild(pelement);
+    }
+
+</script>
+
+</body>
+</html>
