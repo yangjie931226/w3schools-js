@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<p id="result">使用textContent获取这里的文字</p>
+<textarea id="show" style="width: 200px;height: 200px;"></textarea>
+<button onclick="get()" style="position: relative;top: -6px;">获取</button>
+<script>
+    function get() {
+        document.getElementById('show').value = document.getElementById('result').textContent;
+    }
+</script>
+</body>
+</html>
