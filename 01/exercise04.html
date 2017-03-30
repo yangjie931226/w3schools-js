@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>计算加法</title>
+</head>
+<body>
+<script>
+    function plus() {
+        if (isNaN(document.getElementById('inp1').value) || isNaN(document.getElementById('inp2').value)) {
+            document.getElementById('result').value = "请输入数字";
+        } else {
+            document.getElementById('result').value = Number(document.getElementById('inp1').value) + Number(document.getElementById('inp2').value);
+        }
+    }
+</script>
+<input type="text" id="inp1">
++
+<input type="text" id="inp2">
+=
+<input id='result' type="text" readonly/>
+<input value="计算" onclick="plus();" type="button"/>
+</body>
+</html>
