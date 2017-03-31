@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>备忘录</title>
+</head>
+<style>
+ #content {
+  width: 500px;
+  margin: 10px auto;
+ }
+
+ #btn {
+  float: right;
+  margin-right: -7px;
+  margin-top: 10px;
+ }
+
+ #borad {
+  width: 500px;
+  height: 350px;
+  border: 1px #ccc dashed;
+ }
+
+ #text {
+  width: 496px;
+  height: 130px;
+  margin-top: 10px;
+ }
+
+ p {
+  margin: 0;
+  padding: 0;
+  padding: 3px 0;
+  border-bottom: 1px #ccc dashed;
+  text-indent: 35px;
+ }
+</style>
+<body>
+<div id="content">
+ <div id="borad"></div>
+ <textarea id="text"></textarea>
+ <div id="btn">
+  <button onclick="send()" style="position: relative;top: -6px;">发布</button>
+  <button onclick="reset()" style="position: relative;top: -6px;">重置</button>
+ </div>
+</div>
+<script>
+    function send() {
+        if(document.getElementById('text').value!==''){
+            var pElement = document.createElement("p");
+            var pNode = document.createTextNode(document.getElementById('text').value + "     " + getNowFormatDate());
+            pElement.appendChild(pNode);
+            var element = document.getElementById("borad");
+            element.appendChild(pElement);
+            reset();
+        }
+    }
+    function reset() {
+        document.getElementById('text').value = '';
+    }
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var seperator2 = ":";
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+        return currentdate;
+    }
+</script>
+</body>
+</html>
