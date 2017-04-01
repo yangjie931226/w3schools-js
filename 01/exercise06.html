@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    jobs = ["医生", "法师", "律师", "魔导师"];
+    function fu() {
+        var str = '';
+        for (var i = 0; i < jobs.length; i++) {
+            str += jobs[i] + "<br>";
+        }
+        document.getElementById('demo').innerHTML = str;
+    }
+    function fu1() {
+        var strs = '';
+        for (var i = jobs.length - 1; i >= 0; i--) {
+            strs += jobs[i] + "<br>";
+
+        }
+        document.getElementById('demo').innerHTML = strs;
+    }
+</script>
+<div id="demo"></div>
+<input value="顺序输出数组" onclick="fu();" type="button"/>
+<input value="倒数输出数组" onclick="fu1();" type="button"/>
+
+</body>
+</html>
