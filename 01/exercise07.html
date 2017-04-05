@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<p id="result">改变这段字体的大小</p>
+<script>
+    function small() {
+        document.getElementById('result').style.fontSize = "16px";
+    }
+    function middle() {
+        document.getElementById('result').style.fontSize = "18px";
+    }
+    function big() {
+        document.getElementById('result').style.fontSize = "20px";
+    }
+</script>
+<input value="小" onclick="small();" type="button"/>
+<input value="中" onclick="middle();" type="button"/>
+<input value="大" onclick="big();" type="button"/>
+</body>
+</html>
