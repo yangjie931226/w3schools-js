@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除数组元素</title>
+</head>
+<body>
+<p>使用splice()删除数组元素</p>
+<button onclick="dele()">删除</button>
+<p id="demo"></p>
+<script>
+    var fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+    document.getElementById("demo").innerHTML = fruits;
+    function dele() {
+        fruits.splice(0, 1);
+        document.getElementById("demo").innerHTML = fruits;
+    }
+</script>
+</body>
+</html>
