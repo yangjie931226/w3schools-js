@@ -6,12 +6,12 @@
 </head>
 <body>
 <p>使用splice()删除数组元素</p>
-<button onclick="dele()">删除</button>
+<button onclick="remove()">删除</button>
 <p id="demo"></p>
 <script>
     var fruits = ["Banana", "Orange", "Apple", "Kiwi"];
     document.getElementById("demo").innerHTML = fruits;
-    function dele() {
+    function remove() {
         fruits.splice(0, 1);
         document.getElementById("demo").innerHTML = fruits;
     }
