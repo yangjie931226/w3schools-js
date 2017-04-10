@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>typeof</title>
+</head>
+<body>
+<p> typeof查看undefined,方法，对象，null，变量，字符串，false的类型 </p>
+<p id="demo"></p>
+<script>
+    var x;
+    var car = ['volvo', 'bmw'];
+    var person = {
+        name: 'yangjie',
+        age: 24
+    };
+    function test() {
+        alert(person.name + ' is ' + person.age);
+    }
+    document.getElementById("demo").innerHTML =
+        typeof undefined + "<br>" + typeof test + "<br>" + typeof person + "<br>" + typeof null + "<br>" + typeof x + "<br>" + typeof "john" + "<br>" + typeof 3.14 + "<br>" + typeof true + "<br>" + typeof false;
+</script>
+</body>
+</html>
