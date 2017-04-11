@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算字符串长度</title>
+</head>
+<body>
+<h1>请输入字符串:</h1>
+<input type="text" id="str">
+<button onclick="getStringLength()">计算长度</button>
+<p id="demo"></p>
+<script>
+    function getStringLength() {
+        var txt = document.getElementById("str").value;
+        document.getElementById("demo").innerHTML = txt.length;
+    }
+</script>
+</body>
+</html>
