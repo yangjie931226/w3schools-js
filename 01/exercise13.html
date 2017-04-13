@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<input onclick="upper();" id="str" type="text"/>
+<input value="大写" onclick="upper()" type="button"/>
+<input value="小写" onclick="lower()" type="button"/>
+<script>
+    function upper() {
+        var str = document.getElementById('str').value;
+        document.getElementById('str').value = str.toUpperCase();
+    }
+    function lower() {
+        var str = document.getElementById('str').value;
+        document.getElementById('str').value = str.toLowerCase();
+    }
+</script>
+</body>
+</html>
