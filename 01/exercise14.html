@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>字符串方法</title>
+</head>
+<body>
+输入字符串<input id="str" type="text"/>
+输入下标<input id="index" type="number"/>
+<input value="获取下标字符串" onclick="getIndexStr()" type="button"/>
+<p>输出：<span id="result"></span></p>
+<script>
+    function getIndexStr() {
+        var str = document.getElementById('str').value;
+	var index = document.getElementById('index').value;
+        document.getElementById('result').textContent = str.charAt(index);
+    }
+</script>
+</body>
+</html>
