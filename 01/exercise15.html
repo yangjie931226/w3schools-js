@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Events</title>
+</head>
+<body id="load">
+
+<h1>onclick</h1>
+<button id="displayDate">This time is?</button>
+<p id="click"></p>
+
+<h1>onload</h1>
+<p id="afterload"></p>
+
+<h1>onchange</h1>
+<input id="change" type="text">
+<p id="changeResult"></p>
+
+<h1>onmouseover</h1>
+<p id="mouseover">onmouseover改变这段文字的字体颜色</p>
+<p id="mouseoverResult"></p>
+
+<h1>onmouseout</h1>
+<p id="mouseout">onmouseout改变这段文字的字体颜色</p>
+<p id="mouseoutResult"></p>
+
+<h1>onkeydown</h1>
+<p id="keydown">press enter to upper this case</p>
+<p id="keydownResult"></p>
+
+<h1>onblur</h1>
+<input id="blur" type="text">
+
+<h1>onfocus</h1>
+<input id="focus" type="text">
+<script>
+    //onclick事件
+    document.getElementById("displayDate").onclick = displayDate;
+    function displayDate() {
+        document.getElementById("click").innerHTML = Date().toString();
+    }
+    //onload事件
+    document.getElementById("load").onload = load;
+    function load() {
+        document.getElementById("afterload").innerHTML = "页面已经加载完，执行onload事件";
+    }
+    //onchange事件
+    document.getElementById("change").onchange = change;
+    function change() {
+        var changeString = document.getElementById("change").value;
+        document.getElementById("change").value = changeString.toUpperCase();
+        document.getElementById("changeResult").innerHTML = "通过onchange事件将输入的小写字母转换成大写字母";
+    }
+    //onmouseover事件
+    document.getElementById("mouseover").onmouseover = mouseover;
+    function mouseover() {
+        document.getElementById("mouseover").style.color = "red";
+        document.getElementById("mouseoverResult").innerHTML = "通过onmouseover事件改变了字体颜色";
+    }
+    //onmouseout事件
+    document.getElementById("mouseout").onmouseout = mouseout;
+    function mouseout() {
+        document.getElementById("mouseout").style.color = "red";
+        document.getElementById("mouseoutResult").innerHTML = "通过onmouseout事件改变了字体颜色";
+    }
+    //onkeydown事件
+    document.onkeydown = function (e) {
+        if (e.keyCode == 13) {
+            var keydownString = document.getElementById("keydown").textContent;
+            document.getElementById("keydown").textContent = keydownString.toUpperCase();
+        }
+    }
+    //onblur事件
+    document.getElementById("blur").onblur = blur;
+    function blur() {
+        document.getElementById("blur").value = "光标离开，触发了onblur事件";
+    }
+    //onfocus事件
+    document.getElementById("focus").onfocus = focus;
+    function focus() {
+        document.getElementById("focus").value = "得到焦点，触发了onfocus事件";
+    }
+</script>
+</body>
+</html>
