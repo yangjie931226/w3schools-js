@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript String Methods</title>
+</head>
+<body>
+
+<h1>String Length</h1>
+<p id="str"></p>
+<p id="length"></p>
+
+<h1>Finding a String in a String</h1>
+<p>该方法将从头到尾地检索字符串 stringObject，看它是否含有子串 searchvalue。开始检索的位置在字符串的 fromindex 处或字符串的开头（没有指定 fromindex 时）。如果找到一个
+    searchvalue，则返回 searchvalue 的第一次出现的位置。stringObject 中的字符位置是从 0 开始的。</p>
+<p id="find">find yangjie where 'yangjie' occurs!</p>
+<p id="index"></p>
+<p>该方法将从尾到头地检索字符串 stringObject，看它是否含有子串 searchvalue。开始检索的位置在字符串的 fromindex 处或字符串的结尾（没有指定 fromindex 时）。如果找到一个
+    searchvalue，则返回 searchvalue 的第一个字符在 stringObject 中的位置。stringObject 中的字符位置是从 0 开始的。</p>
+<p id="lastIndex"></p>
+
+<h1>Searching for a String in a String</h1>
+<p>search() 方法不执行全局匹配，它将忽略标志 g。它同时忽略 regexp 的 lastIndex 属性，并且总是从字符串的开始进行检索，这意味着它总是返回 stringObject 的第一个匹配的位置</p>
+<p id="find1">find yangjie where 'yangjie' occurs!</p>
+<p id="search"></p>
+
+<h1>The slice() Method</h1>
+<p>String 对象的方法 slice()、substring() 和 substr() （不建议使用）都可返回字符串的指定部分。slice() 比 substring() 要灵活一些，因为它允许使用负数作为参数。slice() 与
+    substr() 有所不同，因为它用两个字符的位置来指定子串，而 substr() 则用字符位置和长度来指定子串。</p>
+<p>Ben,BMW,Volvo,截取BMW</p>
+<p id="result"></p>
+<p id="result1"></p>
+<p id="result2"></p>
+<p id="result3"></p>
+
+<h1>The substring() Method</h1>
+<p>substring() 方法返回的子串包括 start 处的字符，但不包括 stop 处的字符。
+    如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数</p>
+<p>Ben,BMW,Volvo,截取BMW</p>
+<p id="result4"></p>
+
+<h1>The substr() Method</h1>
+<p>substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。</p>
+<p>Ben,BMW,Volvo,截取BMW</p>
+<p id="result5"></p>
+
+<h1>Replacing String Content</h1>
+<p>replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</p>
+<p id="replace">replace YangJie of WuYanZu</p>
+<p id="result6"></p>
+
+<h1>Converting to Upper and Lower Case</h1>
+<p id="upperLower">Converting to Upper and Lower Case</p>
+<p id="result7"></p>
+<p id="result8"></p>
+
+<h1>The concat() Method</h1>
+<p id="result9"></p>
+<p id="result10"></p>
+
+<h1>Converting a String to an Array</h1>
+<p>split() 方法用于把一个字符串分割成字符串数组。</p>
+<p id="result11"></p>
+<p id="result12"></p>
+<script>
+    var txtLength = "how long is this ?";
+    document.getElementById("str").innerHTML = txtLength;
+    document.getElementById("length").innerHTML = txtLength.length;
+
+    var str1 = document.getElementById("find").textContent;
+    var index = str1.indexOf("yangjie");
+    document.getElementById("index").textContent = index;
+    var lastIndex = str1.lastIndexOf("yangjie");
+    document.getElementById("lastIndex").textContent = lastIndex;
+
+    var str2 = document.getElementById("find1").textContent;
+    var search = str2.indexOf("yangjie");
+    document.getElementById("search").textContent = search;
+
+    var str2 = "Ben,BMW,Volvo";
+    var result = str2.slice(4, 7);
+    document.getElementById("result").textContent = result;
+    var result1 = str2.slice(-9, -6);
+    document.getElementById("result1").textContent = result1;
+    var result2 = str2.slice(4);
+    document.getElementById("result2").textContent = result2;
+    var result3 = str2.slice(-9);
+    document.getElementById("result3").textContent = result3;
+
+    var result4 = str2.substring(4, 7);
+    document.getElementById("result4").textContent = result4;
+
+    var result5 = str2.substr(4, 3);
+    document.getElementById("result5").textContent = result5;
+
+    var str3 = document.getElementById("replace").textContent;
+    var result6 = str3.replace("YangJie", "WuYanZu");
+    document.getElementById("result6").textContent = result6;
+
+    var str4 = document.getElementById("upperLower").textContent;
+    var result7 = str4.toUpperCase();
+    document.getElementById("result7").textContent = result7;
+    var result8 = str4.toLowerCase();
+    document.getElementById("result8").textContent = result8;
+
+    var str5 = "Hello";
+    var str6 = "YangJie";
+    var str7 = str5.concat(" ", str6);
+    document.getElementById("result9").textContent = str7;
+
+    var str8 = "a,b,c,d,e";
+    var array = str8.split(",");
+    document.getElementById("result11").textContent = typeof str8;
+    document.getElementById("result12").textContent = typeof array;
+</script>
+</body>
+</html>
