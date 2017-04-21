@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Number Methods</title>
+</head>
+<body>
+
+<h1>The toString() Method</h1>
+<p id="toString"></p>
+
+<h1>The toExponential() Method</h1>
+<p id="toExponential"></p>
+
+<h1>The toFixed() Method</h1>
+<p id="toFixed"></p>
+
+<h1>The toPrecision() Method</h1>
+<p id="toPrecision"></p>
+
+<h1>The valueOf() Method</h1>
+<p id="valueOf"></p>
+
+<h1>The Number() Method</h1>
+<p id="c"></p>
+<p id="d"></p>
+<p id="e"></p>
+<p id="f"></p>
+<p id="g"></p>
+
+<h1>The parseInt() Method</h1>
+<p id="h"></p>
+<p id="i"></p>
+<p id="j"></p>
+<p id="k"></p>
+<p id="l"></p>
+
+<h1>The parseFloat() Method</h1>
+<p id="m"></p>
+<p id="n"></p>
+<p id="o"></p>
+<p id="p"></p>
+<p id="q"></p>
+
+<h1>Number Properties</h1>
+<p id="r"></p>
+<script>
+    var x = 10;
+    x.toString();
+    (10).toString();
+    (10 + 23).toString();
+    document.getElementById("toString").innerHTML = x.toString() + "<br>" + (123).toString() + "<br>" + (100 + 23).toString();
+
+    var y = 1.123;
+    document.getElementById("toExponential").innerHTML = y.toExponential() + "<br>" + y.toExponential(2) + "<br>" + y.toExponential(4) + "<br>" + y.toExponential(6);
+
+    var z = 1.123;
+    document.getElementById("toFixed").innerHTML = z.toFixed(0) + "<br>" + z.toFixed(2) + "<br>" + z.toFixed(4) + "<br>" + z.toFixed(6);
+
+    var a = 1.123;
+    document.getElementById("toPrecision").innerHTML = a.toPrecision() + "<br>" + a.toPrecision(2) + "<br>" + a.toPrecision(4) + "<br>" + a.toPrecision(6);
+
+    var b = 10;
+    document.getElementById("valueOf").innerHTML = b.valueOf() + "<br>" + (10).valueOf() + "<br>" + (10 + 23).valueOf();
+
+    var c = true;
+    document.getElementById("c").innerHTML = Number(c);
+    var d = false;
+    document.getElementById("d").innerHTML = Number(d);
+    var e = new Date();
+    document.getElementById("e").innerHTML = Number(e);
+    var f = "10";
+    document.getElementById("f").innerHTML = Number(f);
+    var g = "10 20";
+    document.getElementById("g").innerHTML = Number(g);
+
+    var h = "10";
+    document.getElementById("h").innerHTML = parseInt(h);
+    var i = "10.123";
+    document.getElementById("i").innerHTML = parseInt(i);
+    var j = "10 20 30";
+    document.getElementById("j").innerHTML = parseInt(j);
+    var k = "10 years";
+    document.getElementById("k").innerHTML = parseInt(k);
+    var l = "years 10";
+    document.getElementById("l").innerHTML = parseInt(l);
+
+    var m = "10";
+    document.getElementById("h").innerHTML = parseFloat(m);
+    var n = "10.123";
+    document.getElementById("i").innerHTML = parseFloat(n);
+    var o = "10 20 30";
+    document.getElementById("j").innerHTML = parseFloat(o);
+    var p = "10 years";
+    document.getElementById("k").innerHTML = parseFloat(p);
+    var q = "years 10";
+    document.getElementById("l").innerHTML = parseFloat(q);
+
+    var r = Number.MAX_VALUE;
+    document.getElementById("r").innerHTML = r;
+</script>
+</body>
+</html>
