@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Dates</title>
+</head>
+<body>
+
+<h1>Displaying Dates</h1>
+<p id="date1"></p>
+
+<h1>Creating Date Objects</h1>
+<p id="date2"></p>
+<p id="date3"></p>
+<p id="date4"></p>
+<p id="date5"></p>
+
+<h1>Date Methods</h1>
+<p>getDate() 方法可返回月份的某一天。</p>
+<p id="date6"></p>
+<p>getDay() 方法可返回表示星期的某一天的数字。</p>
+<p id="date7"></p>
+<p>getMonth() 方法可返回表示月份的数字。</p>
+<p id="date8"></p>
+<p>getFullYear() 方法可返回一个表示年份的 4 位数字。</p>
+<p id="date9"></p>
+<p>getHours() 方法可返回时间的小时字段。</p>
+<p id="date10"></p>
+<p>getMinutes() 方法可返回时间的分钟字段。</p>
+<p id="date11"></p>
+<p>getSeconds() 方法可返回时间的秒。</p>
+<p id="date12"></p>
+
+<script>
+    document.getElementById("date1").innerHTML = new Date().toString();
+
+    document.getElementById("date2").innerHTML = new Date(1000000000).toString();
+    document.getElementById("date3").innerHTML = new Date("October 13, 2017 11:13:00").toString();
+    document.getElementById("date4").innerHTML = new Date(2017, 4, 26, 13, 45, 17, 222).toString();
+
+    var date = new Date();
+    document.getElementById("date6").innerHTML = date.getDate();
+    document.getElementById("date7").innerHTML = date.getDay();
+    document.getElementById("date8").innerHTML = date.getMonth() + 1;
+    document.getElementById("date9").innerHTML = date.getFullYear();
+    document.getElementById("date10").innerHTML = date.getHours();
+    document.getElementById("date11").innerHTML = date.getMinutes();
+    document.getElementById("date12").innerHTML = date.getSeconds();
+</script>
+
+
+</body>
+</html>
