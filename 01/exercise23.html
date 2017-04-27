@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Functions</title>
+</head>
+<body>
+
+<h1>Example</h1>
+<input type="number" id="num1">*<input type="number" id="num2">
+<button id="btn1">计算</button>
+<p id="result1"></p>
+
+<h1>Functions Used as Variable Values</h1>
+<p id="result2"></p>
+
+<h1>The () Operator Invokes the Function</h1>
+<p id="result3"></p>
+
+<script>
+    function myFunction(p1, p2) {
+        document.getElementById("result1").innerHTML = p1 * p2;
+    }
+    document.getElementById("btn1").onclick = function () {
+        var a = document.getElementById("num1").value;
+        var b = document.getElementById("num2").value;
+        myFunction(a, b)
+    };
+
+    document.getElementById("result2").innerHTML = "The temperature is " + toCelsius(77) + " Celsius";
+    function toCelsius(fahrenheit) {
+        return (5 / 9) * (fahrenheit - 32);
+    }
+
+    document.getElementById("result3").innerHTML = myFunction;
+
+</script>
+
+
+</body>
+</html>
