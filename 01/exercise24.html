@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Arrays</title>
+</head>
+<body>
+
+<h1>Example</h1>
+<p id="result1"></p>
+
+<h1>Using the JavaScript Keyword new</h1>
+<p id="result2"></p>
+
+<h1>Access the Elements of an Array</h1>
+<p id="result3"></p>
+
+<h1>Array Properties and Methods</h1>
+<p>length [7,1,9,3,2,4,8,5,6]</p>
+<p id="result4"></p>
+<p>sort [7,1,9,3,2,4,8,5,6]</p>
+<p id="result5"></p>
+
+<h1>Adding Array Elements</h1>
+<p>add 0 to [7,1,9,3,2,4,8,5,6]</p>
+<p id="result6"></p>
+<script>
+    var cars = ["Saab", "Volvo", "BMW"];
+    document.getElementById("result1").innerHTML = "I like " + cars[0] + ", " + cars[1] + " and " + cars[2] + ".";
+
+    document.getElementById("result2").innerHTML = cars;
+
+    document.getElementById("result3").innerHTML = cars[0];
+
+    document.getElementById("result3").innerHTML = cars[0];
+
+    var num = [7, 1, 9, 3, 2, 4, 8, 5, 6];
+    document.getElementById("result4").innerHTML = num.length;
+    document.getElementById("result5").innerHTML = num.sort();
+
+    num.push(0);
+    document.getElementById("result6").innerHTML = num;
+</script>
+
+
+</body>
+</html>
