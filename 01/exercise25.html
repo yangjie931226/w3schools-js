@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Array Methods</title>
+</head>
+<body>
+
+<h1>Converting Arrays to Strings</h1>
+<p id="result1"></p>
+
+<h1>The join() method also joins all array elements into a string.</h1>
+<p id="result2"></p>
+
+<h1>Popping</h1>
+<p id="result3"></p>
+
+<h1>Pushing</h1>
+<p id="result4"></p>
+
+<h1>Shifting Elements</h1>
+<p id="result5"></p>
+<script>
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("result1").innerHTML = fruits.toString();
+
+    document.getElementById("result2").innerHTML = fruits.join(" * ");
+
+    fruits.pop();
+    document.getElementById("result3").innerHTML = fruits.toString();
+
+    fruits.push("Lemon");
+    document.getElementById("result4").innerHTML = fruits.toString();
+
+    fruits.shift();
+    document.getElementById("result5").innerHTML = fruits.toString();
+</script>
+
+
+</body>
+</html>
