@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sorting Arrays</title>
+</head>
+<body>
+
+<h1>Sorting an Array</h1>
+<p>"Banana", "Orange", "Apple", "Mango"</p>
+<p id="result1"></p>
+
+<h1>Reversing an Array</h1>
+<p>Apple,Banana,Mango,Orange</p>
+<p id="result2"></p>
+
+<h1>Numeric Sort</h1>
+<p>40, 100, 1, 5, 25, 10</p>
+<p id="result3"></p>
+s
+<script>
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.sort();
+    document.getElementById("result1").innerHTML = fruits.toString();
+
+    fruits.reverse();
+    document.getElementById("result2").innerHTML = fruits.toString();
+
+    var numbers = [40, 100, 1, 5, 25, 10];
+    numbers.sort(function (a, b) {
+        return a - b
+    });
+    document.getElementById("result3").innerHTML = numbers.toString();
+</script>
+
+
+</body>
+</html>
