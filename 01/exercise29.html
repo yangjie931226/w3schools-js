@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Comparison and Logical Operators</title>
+</head>
+<body>
+
+<h1>Comparison Operators</h1>
+<p>==</p>
+<p id="result1"></p>
+<p>===</p>
+<p id="result2"></p>
+<p>!=</p>
+<p id="result3"></p>
+<p>!==</p>
+<p id="result4"></p>
+<p><</p>
+<p id="result5"></p>
+<p>></p>
+<p id="result6"></p>
+<p>>=</p>
+<p id="result7"></p>
+<p><=</p>
+<p id="result8"></p>
+
+<h1>Logical Operators</h1>
+<p>&&</p>
+<p id="result9"></p>
+<p>||</p>
+<p id="result10"></p>
+<p>!</p>
+<p id="result11"></p>
+
+<h1>Conditional (Ternary) Operator</h1>
+<p>variablename = (condition) ? value1:value2</p>
+<input id="age" value="18"/>
+<button onclick="myFunction()">Try it</button>
+<p id="result12"></p>
+
+<script>
+    var a = 5;
+    document.getElementById("result1").innerHTML = (a == 8);
+    var b = "5";
+    document.getElementById("result2").innerHTML = (b === 5);
+    var c = 5;
+    document.getElementById("result3").innerHTML = (c != 8);
+    var d = "5";
+    document.getElementById("result4").innerHTML = (d !== 5);
+    var e = 5;
+    document.getElementById("result5").innerHTML = (e < 8);
+    var f = 5;
+    document.getElementById("result6").innerHTML = (f > 8);
+    var g = 5;
+    document.getElementById("result7").innerHTML = (g >= 5);
+    var h = 5;
+    document.getElementById("result8").innerHTML = (h <= 5);
+
+    var i = 6;
+    var j = 3;
+    document.getElementById("result9").innerHTML = (i < 10 && j > 1) + "<br>" + (i < 10 && j < 1);
+    document.getElementById("result10").innerHTML = (i === 5 || j === 5) + "<br>" + (i === 6 || j === 5) + "<br>" + (i === 6 || j === 3);
+    document.getElementById("result11").innerHTML = !(i === j) + "<br>" + !(i > j);
+
+    function myFunction() {
+        var age, voteable;
+        age = document.getElementById("age").value;
+        voteable = (age < 18) ? "Too young" : "Old enough";
+        document.getElementById("result12").innerHTML = voteable + " to vote.";
+    }
+</script>
+
+
+</body>
+</html>
