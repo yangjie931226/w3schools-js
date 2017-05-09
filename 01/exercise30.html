@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript If...Else Statements</title>
+</head>
+<body>
+
+<h1>The if Statement</h1>
+<p>Display "Good day!" if the hour is less than 18:00:</p>
+<p id="result1">Good Evening!</p>
+
+<h1>The else Statement</h1>
+<p>Display a time-based greeting:</p>
+<p id="result2"></p>
+
+<h1>The else if Statement</h1>
+<p>If time is less than 10:00, create a "Good morning" greeting, if not, but time is less than 20:00, create a "Good
+    day" greeting, otherwise a "Good evening"</p>
+<p id="result3"></p>
+
+<h1>Exercise</h1>
+<h3>Exercise1</h3>
+<p>Use the if statement to output some text if 5 is greater than 2.</p>
+<p id="result4"></p>
+
+<h3>Exercise2</h3>
+<p>1. Write an if statement with the following condition: 10 is greater than 5.</p>
+<p>2. If the condition is true, display "I did it!".</p>
+<p id="result5"></p>
+
+<h3>Exercise3</h3>
+<p>Change the value of the variable firstName to make the if statement run.</p>
+<p id="result6"></p>
+
+<h3>Exercise4</h3>
+<p>Add an else statement to display "You're not John!".</p>
+<p id="result7"></p>
+
+<h3>Exercise5</h3>
+<p>The if/else statement does not work. Try to fix it.</p>
+<p id="result8"></p>
+
+<script>
+    if (new Date().getHours() < 18) {
+        document.getElementById("result1").innerHTML = "Good day!";
+    }
+
+    if (new Date().getHours() > 18) {
+        document.getElementById("result2").innerHTML = "Good Evening!";
+    } else {
+        document.getElementById("result2").innerHTML = "Good day!";
+    }
+
+    if (new Date().getHours() < 10) {
+        document.getElementById("result3").innerHTML = "Good morning";
+    } else if (new Date().getHours() < 20) {
+        document.getElementById("result3").innerHTML = "Good day";
+    } else {
+        document.getElementById("result3").innerHTML = "Good evening";
+    }
+
+    if (5 > 2) {
+        document.getElementById("result4").innerHTML = "Well done!";
+    }
+
+    if (10 > 5) {
+        document.getElementById("result5").innerHTML = "I did it!";
+    }
+
+    var firstName = "John";
+    if (firstName === "John") {
+        document.getElementById("result6").innerHTML = "Hello John!";
+    }
+
+    var firstName = "Greg";
+    if (firstName === "John") {
+        document.getElementById("result7").innerHTML = "Hello John!";
+    } else {
+        document.getElementById("result7").innerHTML = "You're not John!";
+    }
+
+    var greeting;
+    var hour = new Date().getHours();
+    if (hour < 18) {
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
+    document.getElementById("demo").innerHTML = greeting;
+</script>
+
+
+</body>
+</html>
