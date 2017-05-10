@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Switch Statement</title>
+</head>
+<body>
+
+<h1>The JavaScript Switch Statement</h1>
+<p id="result1"></p>
+
+<h1>The default Keyword</h1>
+<p id="result2"></p>
+
+<h1>Common Code Blocks</h1>
+<p>Sometimes you will want different switch cases to use the same code.</p>
+<p id="result3"></p>
+
+<h1>Exercise</h1>
+<h3>Exercise1</h3>
+<p>The switch statement is missing a case for "Apple". Add it, and set text to "How you like them apples?"</p>
+<input id="myInput1" type="text" value="Apple">
+<button onclick="checkFruit1()">Check Fruit</button>
+<p id="result4"></p>
+
+<h3>Exercise2</h3>
+<p>The switch statement is missing a default case.</p>
+<p>Add it at the bottom of the switch statement, and set text to "I have never heard of that fruit."</p>
+<input id="myInput2" type="text" value="Tutti Frutti">
+<button onclick="checkFruit2()">Check Fruit</button>
+<p id="result5"></p>
+
+<h3>Exercise3</h3>
+<p>The switch statement does not work. Try to fix it.</p>
+<input id="myInput3" type="text" value="Orange">
+<button onclick="checkFruit3()">Check Fruit</button>
+<p id="result6"></p>
+
+<h3>Exercise4</h3>
+<p>Finish the switch statement. Add the following cases: BMW, Ford and Peugeot. </p>
+<p>Set the value of the variable text to: "German car" for BMW. "American car" for Ford. "French car" for Peugeot.</p>
+<p>Also add a default case where the text value is "Unknown car name".</p>
+<input id="myInput4" type="text" value="BMW">
+<button onclick="checkCar()">Check Car</button>
+<p id="result7"></p>
+
+<script>
+    var day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case  6:
+            day = "Saturday";
+    }
+    document.getElementById("result1").innerHTML = "Today is " + day;
+
+    var text;
+    switch (new Date().getDay()) {
+        case 6:
+            text = "Today is Saturday";
+            break;
+        case 0:
+            text = "Today is Sunday";
+            break;
+        default:
+            text = "Looking forward to the Weekend";
+    }
+    document.getElementById("result2").innerHTML = text;
+
+    var result;
+    switch (new Date().getDay()) {
+        case 4:
+        case 5:
+            result = "Soon it is Weekend";
+            break;
+        case 0:
+        case 6:
+            result = "It is Weekend";
+            break;
+        default:
+            result = "Looking forward to the Weekend";
+    }
+    document.getElementById("result3").innerHTML = result;
+
+    function checkFruit1() {
+        var text;
+        var fruits = document.getElementById("myInput1").value;
+        switch (fruits) {
+            case "Banana":
+                text = "Banana is good!";
+                break;
+            case "Orange":
+                text = "I am not a fan of orange.";
+                break;
+            case "Apple":
+                text = "How you like them apples?";
+                break;
+            default:
+                text = "I have never heard of that fruit.";
+        }
+        document.getElementById("result4").innerHTML = text;
+    }
+
+    function checkFruit2() {
+        var text;
+        var fruits = document.getElementById("myInput2").value;
+        switch (fruits) {
+            case "Banana":
+                text = "Banana is good!";
+                break;
+            case "Orange":
+                text = "I am not a fan of orange.";
+                break;
+            case "Apple":
+                text = "How you like them apples?";
+                break;
+            default:
+                text = "I have never heard of that fruit.";
+        }
+        document.getElementById("result5").innerHTML = text;
+    }
+
+    function checkFruit3() {
+        var text;
+        var fruits = document.getElementById("myInput3").value;
+
+        switch (fruits) {
+            case "Banana":
+                text = "Banana is good!";
+                break;
+            case "Orange":
+                text = "I am not a fan of orange.";
+                break;
+            case "Apple":
+                text = "How you like them apples?";
+                break;
+            default:
+                text = "I have never heard of that fruit.";
+        }
+        document.getElementById("result6").innerHTML = text;
+    }
+
+    function checkCar() {
+        var text;
+        var favCar = document.getElementById("myInput4").value;
+        switch (favCar) {
+            case "BMW":
+                text = "German car";
+                break;
+            case "Ford":
+                text = "American car";
+                break;
+            case "Peugeot":
+                text = "French car";
+                break;
+            default:
+                text = "Unknown car name";
+        }
+        document.getElementById("result7").innerHTML = text;
+    }
+</script>
+
+
+</body>
+</html>
