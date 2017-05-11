@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript For Loop</title>
+</head>
+<body>
+
+<h1>JavaScript For Loops</h1>
+<p id="result1"></p>
+
+<h1>The For/In Loop</h1>
+<p id="result2"></p>
+
+<h1>Exercise</h1>
+<h3>Exercise1</h3>
+<p>In the for loop, change num1 to 0 and num2 to 10 and run the code.</p>
+<p id="result3"></p>
+
+<h3>Exercise2</h3>
+<p>Make the loop start counting from 5 instead of 0:</p>
+<p id="result4"></p>
+
+<h3>Exercise3</h3>
+<p>Make the loop start counting from 5. Count up to (including) 50, and count only every fifth number.</p>
+<p id="result5"></p>
+
+<h3>Exercise4</h3>
+<p>Make the loop start counting downwards from 10 and stop at 1.</p>
+<p>The output should be 10 9 8 7 6 5 4 3 2 1 with line breaks.</p>
+<p id="result6"></p>
+
+<script>
+    var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+    var text = "";
+    var i;
+    for (i = 0; i < cars.length; i++) {
+        text += cars[i] + "<br>";
+    }
+    document.getElementById("result1").innerHTML = text;
+
+    var txt = "";
+    var person = {fname: "John", lname: "Doe", age: 25};
+    var x;
+    for (x in person) {
+        txt += person[x] + " ";
+    }
+    document.getElementById("result2").innerHTML = txt;
+
+    var i;
+    for (i = 0; i < 10; i++) {
+        document.getElementById("result3").innerHTML += i + "<br>";
+    }
+
+    var j;
+    for (j = 5; j < 10; j++) {
+        document.getElementById("result4").innerHTML += j + "<br>";
+    }
+
+    var k;
+    for (k = 5; k <= 50; k = k + 5) {
+        document.getElementById("result5").innerHTML += k + "<br>";
+    }
+
+    var l;
+    for (l = 10; l > 0; l--) {
+        document.getElementById("result6").innerHTML += l + "<br>";
+    }
+</script>
+
+
+</body>
+</html>
