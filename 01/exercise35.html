@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Break and Continue</title>
+</head>
+<body>
+
+<h1>The Break Statement</h1>
+
+<p id="result1"></p>
+
+<h1>The Continue Statement</h1>
+
+<p id="result2"></p>
+
+<h1>JavaScript Labels</h1>
+
+<p id="result3"></p>
+
+<h1>Exercise</h1>
+
+<h3>Exercise1</h3>
+
+<p>Use the break statement to stop the loop at 5.</p>
+
+<p id="result4"></p>
+
+<h3>Exercise2</h3>
+
+<p>Use the continue statement to skip the number 5 in the loop.</p>
+
+<p id="result5"></p>
+
+<h3>Exercise3</h3>
+
+<p>Use the continue statement to skip the numbers 5 AND 7 in the loop.</p>
+
+<p id="result6"></p>
+
+<h3>Exercise4</h3>
+
+<p>The switch statement does not work. Try to fix it.</p>
+<input id="myInput" type="text" value="BMW">
+<button onclick="checkCar()">Check Car</button>
+<p id="result7"></p>
+<script>
+    /**
+     *
+     * User: yangjie
+     * Date: 2017/5/15
+     * Time: 13:19
+     */
+    var text = "";
+    var i;
+    for (i = 0; i < 10; i++) {
+        if (i === 3) {
+            break;
+        }
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("result1").innerHTML = text;
+
+    var text = "";
+    var i;
+    for (i = 0; i < 10; i++) {
+        if (i === 3) {
+            continue;
+        }
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("result2").innerHTML = text;
+
+    var cars = ["BMW", "Volvo", "Saab", "Ford"];
+    var text = "";
+    list: {
+        text += cars[0] + "<br>";
+        text += cars[1] + "<br>";
+        text += cars[2] + "<br>";
+        break list;
+        text += cars[3] + "<br>";
+        text += cars[4] + "<br>";
+        text += cars[5] + "<br>";
+    }
+    document.getElementById("result3").innerHTML = text;
+
+    var text = "";
+    var i;
+    for (i = 1; i < 10; i++) {
+        if (i === 5) break;
+        document.getElementById("result4").innerHTML += i + "<br>";
+    }
+
+    var text = "";
+    var i;
+    for (i = 1; i < 10; i++) {
+        if (i === 5) continue;
+        document.getElementById("result5").innerHTML += i + "<br>";
+    }
+
+    var text = "";
+    var i;
+    for (i = 1; i < 10; i++) {
+        if (i === 5 || i === 7) continue;
+        document.getElementById("result6").innerHTML += i + "<br>";
+    }
+    /**
+     * 获取输入的车型号，在页面上打印出车的国家
+     *
+     */
+    function checkCar() {
+        var text;
+        var favCar = document.getElementById("myInput").value;
+        switch (favCar) {
+            case "BMW":
+                text = "German car";
+                break;
+            case "Ford":
+                text = "American car";
+                break;
+            case "Peugeot":
+                text = "French car";
+                break;
+            default:
+                text = "Unknown car name";
+        }
+        document.getElementById("result7").innerHTML = text;
+    }
+</script>
+</body>
+</html>

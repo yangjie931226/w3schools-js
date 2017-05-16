@@ -9,10 +9,20 @@
 <input value="大写" onclick="upper()" type="button"/>
 <input value="小写" onclick="lower()" type="button"/>
 <script>
+    /**
+     * 把小写字母转换成大写字母
+     *
+     * @returns {string}返回在html中
+     */
     function upper() {
         var str = document.getElementById('str').value;
         document.getElementById('str').value = str.toUpperCase();
     }
+    /**
+     * 把大写字母转换成小写字母
+     *
+     * @returns {string}返回在html中
+     */
     function lower() {
         var str = document.getElementById('str').value;
         document.getElementById('str').value = str.toLowerCase();

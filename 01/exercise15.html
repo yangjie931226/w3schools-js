@@ -37,16 +37,31 @@
 <script>
     //onclick事件
     document.getElementById("displayDate").onclick = displayDate;
+    /**
+     * 生成当前日期
+     *
+     * @returns {string}返回在html中
+     */
     function displayDate() {
         document.getElementById("click").innerHTML = Date().toString();
     }
     //onload事件
     document.getElementById("load").onload = load;
+    /**
+     * 判断执行过onload事件
+     *
+     * @returns {string}返回在html中
+     */
     function load() {
         document.getElementById("afterload").innerHTML = "页面已经加载完，执行onload事件";
     }
     //onchange事件
     document.getElementById("change").onchange = change;
+    /**
+     * 将小写字母换成大写
+     *
+     * @returns {string}返回在html中
+     */
     function change() {
         var changeString = document.getElementById("change").value;
         document.getElementById("change").value = changeString.toUpperCase();
@@ -54,12 +69,22 @@
     }
     //onmouseover事件
     document.getElementById("mouseover").onmouseover = mouseover;
+    /**
+     * 将字体变成红色
+     *
+     * @returns {string}返回在html中
+     */
     function mouseover() {
         document.getElementById("mouseover").style.color = "red";
         document.getElementById("mouseoverResult").innerHTML = "通过onmouseover事件改变了字体颜色";
     }
     //onmouseout事件
     document.getElementById("mouseout").onmouseout = mouseout;
+    /**
+     * 将字体变成红色
+     *
+     * @returns {string}返回在html中
+     */
     function mouseout() {
         document.getElementById("mouseout").style.color = "red";
         document.getElementById("mouseoutResult").innerHTML = "通过onmouseout事件改变了字体颜色";
@@ -73,11 +98,21 @@
     }
     //onblur事件
     document.getElementById("blur").onblur = blur;
+    /**
+     * 失去光标事件
+     *
+     * @returns {string}返回在html中
+     */
     function blur() {
         document.getElementById("blur").value = "光标离开，触发了onblur事件";
     }
     //onfocus事件
     document.getElementById("focus").onfocus = focus;
+    /**
+     * 得到光标事件
+     *
+     * @returns {string}返回在html中
+     */
     function focus() {
         document.getElementById("focus").value = "得到焦点，触发了onfocus事件";
     }
