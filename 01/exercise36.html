@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Type Conversion</title>
+</head>
+<body>
+
+<h1>The typeof Operator</h1>
+<p id="result1"></p>
+
+<h1>The constructor Property</h1>
+<p id="result2"></p>
+
+<h1>JavaScript Arrays</h1>
+<p>This "home made" isArray() function returns true when used on an array:</p>
+<p id="result3"></p>
+
+<h1>JavaScript Type Conversion</h1>
+<p>The String() method can convert a number to a string.</p>
+<p id="result4"></p>
+
+<script>
+    /**
+     *
+     * @file JavaScript Break and Continue
+     * @author yangjie
+     * @copyright (c) 2014-$2017 海量云图（北京）数据技术有限公司
+     */
+    document.getElementById("result1").innerHTML =
+        typeof "john" + "<br>" + typeof 3.14 + "<br>" + typeof NaN + "<br>" + typeof false + "<br>" + typeof [1, 2, 3, 4] + "<br>" + typeof {
+            name: 'john',
+            age: 34
+        } + "<br>" + typeof new Date() + "<br>" + typeof function () {
+        } + "<br>" + typeof myCar + "<br>" + typeof null;
+
+    document.getElementById("result2").innerHTML =
+        "john".constructor + "<br>" +
+        (3.14).constructor + "<br>" +
+        false.constructor + "<br>" +
+        [1, 2, 3, 4].constructor + "<br>" +
+        {name: 'john', age: 34}.constructor + "<br>" +
+        new Date().constructor + "<br>" +
+        function () {
+        }.constructor;
+
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("result3").innerHTML = isArray(fruits);
+    /**
+     * 判断是否是数组
+     *
+     *@param {*} myArray
+     *
+     * @returns {boolean}
+     */
+    function isArray(myArray) {
+        return myArray.constructor.toString().indexOf("Array") > -1;
+    }
+
+    var x = 123;
+    document.getElementById("result4").innerHTML =
+        String(x) + "<br>" +
+        String(123) + "<br>" +
+        String(100 + 23);
+
+</script>
+</body>
+</html>
