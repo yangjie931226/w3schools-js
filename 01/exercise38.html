@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Regular Expressions</title>
+</head>
+<body>
+<h1>Using String search() With String</h1>
+<p id="statement">Search a string for "W3Schools", and display the position of the this statement</p>
+<button onclick="findIndexString()">click</button>
+<p id="result1"></p>
+
+<h1>Using String search() With a Regular Expression</h1>
+<p>Search a string for "w3Schools", and display the position of the this statement</p>
+<button onclick="findIndexRegular()">click</button>
+<p id="result2"></p>
+
+<h1>Use String replace() With a Regular Expression</h1>
+<p id="replace">Search a string for "Microsoft", and display the position of the this statement</p>
+<button onclick="relpaceRegular()">click</button>
+<p id="result3"></p>
+<script>
+    /**
+     *
+     * @file JavaScript Regular Expressions
+     * @author yangjie
+     * @copyright (c) 2014-$2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * 找出w3Schools的位置
+     *
+     *
+     */
+    function findIndexString() {
+        var str = document.getElementById("statement").textContent;
+        var n = str.search("W3Schools");
+        document.getElementById("result1").innerHTML = n;
+    }
+
+    /**
+     * 找出w3Schools的位置
+     *
+     *
+     */
+    function findIndexRegular() {
+        var str = document.getElementById("statement").textContent;
+        var n = str.search(/w3schools/i);
+        document.getElementById("result2").innerHTML = n;
+    }
+
+    /**
+     * 替换出现的microsoft为W3Schools
+     *
+     *
+     */
+    function relpaceRegular() {
+        var str = document.getElementById("replace").textContent;
+        var txt = str.replace(/Microsoft/i, "w3Schools");
+        document.getElementById("result3").innerHTML = txt;
+    }
+
+</script>
+</body>
+</html>
