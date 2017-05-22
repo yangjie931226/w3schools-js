@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Errors - Throw and Try to Catch</title>
+</head>
+<body>
+<h1>Errors Will Happen!</h1>
+<p id="result1"></p>
+
+<h1>The throw Statement</h1>
+<p>Please input a number between 5 and 10:</p>
+<input id="demo" type="text">
+<button type="button" onclick="testThrow()">Test Input</button>
+<p id="result2"></p>
+
+<h1>The finally Statement</h1>
+<input id="demo1" type="text">
+<button type="button" onclick="testFinally()">Test Input</button>
+<p id="result3"></p>
+<script>
+    /**
+     *
+     * @file JavaScript Errors - Throw and Try to Catch
+     * @author yangjie
+     * @copyright (c) 2014-$2017 海量云图（北京）数据技术有限公司
+     */
+
+    try {
+        adddlert("Welcome guest!");
+    }
+    catch (err) {
+        document.getElementById("result1").innerHTML = err.message;
+    }
+
+    /**
+     * 测试输入的值是否5到10，否则抛出相应异常
+     *
+     *
+     */
+    function testThrow() {
+        var message, x;
+        message = document.getElementById("result2");
+        message.innerHTML = "";
+        x = document.getElementById("demo").value;
+        try {
+            if (x == "")  throw "empty";
+            if (isNaN(x)) throw "not a number";
+            x = Number(x);
+            if (x < 5)    throw "too low";
+            if (x > 10)   throw "too high";
+        }
+        catch (err) {
+            message.innerHTML = "Input is " + err;
+        }
+    }
+
+    /**
+     * 测试输入的值是否5到10，否则抛出相应异常,清空输入
+     *
+     *
+     */
+    function testFinally() {
+        var message, x;
+        message = document.getElementById("result3");
+        message.innerHTML = "";
+        x = document.getElementById("demo1").value;
+        try {
+            if (x == "")  throw "is empty";
+            if (isNaN(x)) throw "is not a number";
+            x = Number(x);
+            if (x > 10)   throw "is too high";
+            if (x < 5)    throw "is too low";
+        }
+        catch (err) {
+            message.innerHTML = "Input " + err;
+        }
+        finally {
+            document.getElementById("demo1").value = "";
+        }
+    }
+
+</script>
+</body>
+</html>
