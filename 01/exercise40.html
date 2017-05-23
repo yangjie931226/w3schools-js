@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Debugging</title>
+</head>
+<body>
+<h1>The console.log() Method</h1>
+
+<h1>The debugger Keyword</h1>
+<p id="result1"></p>
+<p>With the debugger turned on, the code below should stop executing before it executes the third line.</p>
+<script>
+    /**
+     * @file JavaScript Debugging
+     * @author 杨杰
+     * @copyright (c) 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    var a = 5;
+    var b = 6;
+    var c = a + b;
+    console.log(c);
+
+    var x = 15 * 5;
+    debugger;
+    document.getElementById("result1").innerHTML = x;
+
+</script>
+</body>
+</html>
