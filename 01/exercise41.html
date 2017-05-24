@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Hoisting</title>
+</head>
+<body>
+<h1>JavaScript Declarations are Hoisted</h1>
+<p>Example 1</p>
+<p id="result1"></p>
+<p>Example 2</p>
+<p id="result2"></p>
+
+<h1>JavaScript Initializations are Not Hoisted</h1>
+<p>Example 1</p>
+<p id="result3"></p>
+<p>Example 2</p>
+<p id="result4"></p>
+<p>Example 3</p>
+<p id="result5"></p>
+<script>
+    /**
+     * @file JavaScript Hoisting
+     * @author 杨杰
+     * @copyright (c) 2014-2017 海量云图（北京）数据技术有限公司
+     */
+    x = 5;
+    elem = document.getElementById("result1");
+    elem.innerHTML = x;
+    var x;
+
+    var y;
+    y = 5;
+    elem = document.getElementById("result2");
+    elem.innerHTML = y;
+
+    var a = 5;
+    var b = 7;
+    elem = document.getElementById("result3");
+    elem.innerHTML = "a is " + a + " and b is " + b;
+
+    var c = 5;
+    elem = document.getElementById("result4");
+    elem.innerHTML = "c is " + c + " and d is " + d;
+    var d = 7;
+
+    var e = 5;
+    var f;
+    elem = document.getElementById("result5");
+    elem.innerHTML = "e is " + e + " and f is " + f;
+    f = 7;
+</script>
+</body>
+</html>
