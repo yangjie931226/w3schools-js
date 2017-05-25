@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Use Strict</title>
+</head>
+<body>
+<h1>Declaring Strict Mode</h1>
+<p>Strict mode is declared by adding "use strict"; to the beginning of a script or a function</p>
+
+<h1>JavaScript Initializations are Not Hoisted</h1>
+<p>Example 1</p>
+<p id="result3"></p>
+<p>Example 2</p>
+<p id="result4"></p>
+<p>Example 3</p>
+<p id="result5"></p>
+<script>
+    /**
+     * @file JavaScript Use Strict
+     * @author 杨杰
+     * @copyright (c) 2014-2017 海量云图（北京）数据技术有限公司
+     */
+    "use strict";
+    x = 3.14;
+
+    myFunction();
+    /**
+     * 测试use strict方法里面给不声明变量赋值
+     */
+    function myFunction() {
+        y = 3.14;
+    }
+    // the following will cause an error
+    var arguments = 3.14;
+
+    var eval = 3.14;
+
+    with (Math) {
+        x = cos(2)
+    };
+
+    eval("var x = 2");
+    alert(x);
+
+    var public = 1500;
+</script>
+</body>
+</html>
