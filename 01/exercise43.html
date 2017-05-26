@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Style Guide and Coding Conventions</title>
+</head>
+<body>
+<h1>Variable Names</h1>
+<p>use camelCase for identifier names</p>
+
+<h1>Spaces Around Operators</h1>
+<p>Always put spaces around operators ( = + - * / )</p>
+
+<h1>Code Indentation</h1>
+<p>Always use 4 spaces for indentation of code blocks</p>
+
+<script>
+    /**
+     * @file       JavaScript Style Guide and Coding Conventions
+     * @author     杨杰
+     * @copyright (c) 2014-2017 海量云图（北京）数据技术有限公司
+     */
+        //use camelCase
+    var firstName = "John";
+    var lastName = "Doe";
+    var price = 19.90;
+    var tax = 0.20;
+    var fullPrice = price + (price * tax);
+    //Spaces Around Operators
+    var x = y + z;
+    var values = ["Volvo", "Saab", "Fiat"];
+    //Always use 4 spaces for indentation of code blocks
+    /**
+     * 华氏度转换为摄氏度
+     * @param {number} fahrenheit
+     * @returns {number}
+     */
+    function toCelsius(fahrenheit) {
+        return (5 / 9) * (fahrenheit - 32);
+    }
+</script>
+</body>
+</html>
