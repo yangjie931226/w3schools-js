@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Best Practices</title>
+</head>
+<body>
+<h1>Declarations on Top</h1>
+<p>It is a good coding practice to put all declarations at the top of each script or function.</p>
+
+<h1>Initialize Variables</h1>
+<p>It is a good coding practice to initialize variables when you declare them.</p>
+<div><span style="color:black"><span style="color:red">
+</span><span style="color:mediumblue">var</span> firstName = <span style="color:brown">""</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp; lastName <span
+        style="color:red">
+</span>  = <span style="color:brown">""</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp; price = <span
+        style="color:red">0</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp; discount = <span style="color:red">0</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp; fullPrice <span
+        style="color:red">
+</span>  = <span style="color:red">0</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp; myArray = [],<br>&nbsp;&nbsp;&nbsp;&nbsp; myObject = {}; </span>
+</div>
+
+<script>
+    /**
+     * @file       JavaScript Best Practices
+     * @author     杨杰
+     * @copyright (c) 2014-2017 海量云图（北京）数据技术有限公司
+     */
+    var firstName, lastName, price, discount, fullPrice;
+    firstName = "John";
+    lastName = "Doe";
+    price = 19.90;
+    discount = 0.10;
+    fullPrice = price * 100 / discount;
+    var i;
+    for (i = 0; i < 5; i++) {
+        console.log(i);
+    }
+</script>
+</body>
+</html>
