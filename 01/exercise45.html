@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Common Mistakes</title>
+</head>
+<body>
+<h1>Accidentally Using the Assignment Operator</h1>
+<p>This if statement returns false (as expected) because x is not equal to 10:</p>
+<p id="result1"></p>
+<p>This if statement returns true (maybe not as expected), because 10 is true:</p>
+<p id="result2"></p>
+<p>This if statement returns false (maybe not as expected), because 0 is false:</p>
+<p id="result3"></p>
+
+<h1>Expecting Loose Comparison</h1>
+<p>In regular comparison, data type does not matter. This if statement returns true:</p>
+<p id="result4"></p>
+<p>In strict comparison, data type does matter. This if statement returns false:</p>
+<p id="result5"></p>
+<p>It is a common mistake to forget that switch statements use strict comparison:</p>
+
+<h1>Confusing Addition & Concatenation</h1>
+<p>Because of this, adding a number as a number will produce a different result from adding a number as a string:</p>
+<p id="result6"></p>
+<p>When adding two variables, it can be difficult to anticipate the result:</p>
+<p id="result7"></p>
+<p>It is a common mistake to forget that switch statements use strict comparison:</p>
+<p id="result8"></p>
+<script>
+    /**
+     * @file JavaScript Best Practices
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+    var x = 0;
+    document.getElementById("result1").innerHTML = Boolean(x == 10);
+    var y = 0;
+    document.getElementById("result2").innerHTML = Boolean(y = 10);
+    var z = 0;
+    document.getElementById("result3").innerHTML = Boolean(z = 0);
+
+    var a = 10;
+    var b = "10";
+    document.getElementById("result4").innerHTML = Boolean(a == b);
+    document.getElementById("result5").innerHTML = Boolean(a === b);
+    switch (a) {
+        case 10:
+            alert("Hello");
+    }
+    switch (b) {
+        case 10:
+            alert("Hello");
+    }
+
+    var c = 10 + "5";
+    document.getElementById("result6").innerHTML = c;
+
+    var d = 10;
+    var e = "5";
+    var f = d + e;
+    document.getElementById("demo").innerHTML = f;
+</script>
+</body>
+</html>
