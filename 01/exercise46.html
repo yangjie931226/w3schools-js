@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Performance</title>
+</head>
+<body>
+<h1>Reduce Activity in Loops</h1>
+<p>Statements or assignments that can be placed outside the loop will make the loop run faster.</p>
+
+<h1>Reduce DOM Access</h1>
+<p>If you expect to access a DOM element several times, access it once, and use it as a local variable:</p>
+<p id="result1"></p>
+
+<h1>Avoid Unnecessary Variables</h1>
+<p id="result2"></p>
+<script>
+    /**
+     * @file JavaScript Performance
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+        //Bad:
+    var i;
+    for (i = 0; i < arr.length; i++) {
+
+    }
+    //Better Code:
+    var i;
+    var l = arr.length;
+    for (i = 0; i < l; i++) {
+
+    }
+    //you expect to access a DOM element several times, access it once, and use it as a local variabl
+    var obj;
+    obj = document.getElementById("result1");
+    obj.innerHTML = " Hello";
+
+    //replace code like this:
+    var fullName = firstName + " " + lastName;
+    document.getElementById("result2").innerHTML = fullName;
+    //With this:
+    document.getElementById("result2").innerHTML = firstName + " " + lastName;
+</script>
+</body>
+</html>
