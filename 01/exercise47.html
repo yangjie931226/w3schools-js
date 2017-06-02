@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript JSON</title>
+</head>
+<body>
+<h1>JSON Example</h1>
+
+<h1>Converting a JSON Text to a JavaScript Object</h1>
+<p>create a JavaScript string containing JSON syntax</p>
+<p id="result1"></p>
+
+<p id="result2"></p>
+<script>
+    /**
+     * @file JavaScript JSON
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    //工人的JSON信息例子
+    var employee = {
+            "employees": [
+                {"firstName": "John", "lastName": "Doe"},
+                {"firstName": "Anna", "lastName": "Smith"},
+                {"firstName": "Peter", "lastName": "Jones"}
+            ]
+        };
+    //工人的JSON字符串
+    var text = '{ "employees" : [' +
+        '{ "firstName":"John" , "lastName":"Doe" },' +
+        '{ "firstName":"Anna" , "lastName":"Smith" },' +
+        '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+    //讲JSON字符串转换成JSON对象
+    var obj = JSON.parse(text);
+    document.getElementById("result1").innerHTML =
+        obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+</body>
+</html>
