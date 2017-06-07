@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Forms</title>
+</head>
+<body>
+<h1>JavaScript Form Validation</h1>
+<form name="myForm" action="/action_page_post.php"
+      onsubmit="return validateForm()" method="post">
+    Name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+</form>
+
+<h1>JavaScript Can Validate Input</h1>
+<p>Please input a number between 1 and 10:</p>
+<input id="numb">
+<button type="button" onclick="myFunction()">Submit</button>
+<p id="result1"></p>
+
+<h1>Automatic HTML Form Validation</h1>
+<p>If you click submit, without filling out the text field your browser will display an error message.</p>
+<form method="post">
+    <input type="text" name="fname" required>
+    <input type="submit" value="Submit">
+</form>
+<script>
+    /**
+     * @file JavaScript Forms
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * 检查表单是否为空
+     * @returns {boolean}
+     */
+    function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+    /**
+     * 检查输入的值是否1到10之间的数（包括1，10）
+     */
+    function myFunction() {
+        var x, text;
+        x = document.getElementById("numb").value;
+        if (isNaN(x) || x < 1 || x > 10) {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+        document.getElementById("result1").innerHTML = text;
+    }
+</script>
+</body>
+</html>
