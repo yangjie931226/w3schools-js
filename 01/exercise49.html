@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Validation API</title>
+</head>
+<body>
+<h1>The checkValidity() Method</h1>
+<p>Enter a number and click OK:</p>
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
+<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+<p id="result1"></p>
+
+<h1>The rangeOverflow Property</h1>
+<p>Enter a number and click OK:</p>
+<input id="id2" type="number" max="100">
+<button onclick="myFunction1()">OK</button>
+<p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
+<p id="result2"></p>
+
+<h1>The rangeUnderflow Property</h1>
+<p>Enter a number and click OK:</p>
+<input id="id3" type="number" min="100">
+<button onclick="myFunction2()">OK</button>
+<p>If the number is less than 100 (the input's min attribute), an error message will be displayed.</p>
+<p id="result3"></p>
+<script>
+    /**
+     * @file JavaScript Validation API
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * 检查输入的值是否100到300之间的数
+     * @returns {boolean}
+     */
+    function myFunction() {
+        var inpObj = document.getElementById("id1");
+        if (inpObj.checkValidity() == false) {
+            document.getElementById("result1").innerHTML = inpObj.validationMessage;
+        } else {
+            document.getElementById("result1").innerHTML = "Input OK";
+        }
+    }
+    /**
+     * 检查输入的值是否大于100
+     */
+    function myFunction1() {
+        var txt = "";
+        if (document.getElementById("id2").validity.rangeOverflow) {
+            txt = "Value too large";
+        } else {
+            txt = "Input OK";
+        }
+        document.getElementById("result2").innerHTML = txt;
+    }
+    /**
+     * 检查输入的值是否小于100
+     */
+    function myFunction2() {
+        var txt = "";
+        if (document.getElementById("id3").validity.rangeUnderflow) {
+            txt = "Value too small";
+        } else {
+            txt = "Input OK";
+        }
+        document.getElementById("result3").innerHTML = txt;
+    }
+</script>
+</body>
+</html>
