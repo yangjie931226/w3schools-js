@@ -32,8 +32,8 @@
      */
 
     /**
-     * 检查表单是否为空
-     * @returns {boolean}
+     * 检查表单中的 fname 是否有值
+     * @returns {boolean}有值返回 true；为空返回 false
      */
     function validateForm() {
         var x = document.forms["myForm"]["fname"].value;
@@ -41,7 +41,9 @@
             alert("Name must be filled out");
             return false;
         }
+        return true;
     }
+
     /**
      * 检查输入的值是否1到10之间的数（包括1，10）
      */

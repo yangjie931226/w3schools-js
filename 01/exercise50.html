@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Objects</title>
+</head>
+<body>
+<h1>Objects are Variables Containing Variables</h1>
+<p>Creating a JavaScript Variable.</p>
+<p id="result1"></p>
+<p>Creating a JavaScript Object.</p>
+<p id="result2"></p>
+
+<h1>Using the JavaScript Keyword new</h1>
+<p>Creating a JavaScript Object.</p>
+<p id="result3"></p>
+
+<h1>Using an Object Constructor</h1>
+<p>Creating a JavaScript Object.</p>
+<p id="result4"></p>
+
+<h1>Built-in JavaScript Constructors</h1>
+<p id="result5"></p>
+<script>
+    /**
+     * @file JavaScript Objects
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * Creating a JavaScript Variable.
+     */
+    var person = "John Doe";
+    document.getElementById("result1").innerHTML = person;
+
+    /**
+     * Creating a JavaScript Object.
+     */
+    var personObj = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
+    };
+    document.getElementById("result2").innerHTML = personObj.firstName + " " + personObj.lastName;
+
+    /**
+     * Using the JavaScript Keyword new to create a JavaScript Object
+     */
+    var person2 = new Object();
+    person2.firstName = "John";
+    person2.lastName = "Doe";
+    person2.age = 50;
+    person2.eyeColor = "blue";
+    document.getElementById("result3").innerHTML = person2.firstName + " is " + person2.age + " years old.";
+
+    /**
+     * 生成一个人对象
+     * @param {string} first
+     * @param {string} last
+     * @param {number} age
+     * @param {string} eye
+     */
+    function person3(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+    var myFather = new person3("John", "Doe", 50, "blue");
+    var myMother = new person3("Sally", "Rally", 48, "green");
+    document.getElementById("result4").innerHTML = "My father is " + myFather.age + ". My mother is " + myMother.age;
+
+    var x1 = new Object();   // A new Object object
+    var x2 = new String();   // A new String object
+    var x3 = new Number();   // A new Number object
+    var x4 = new Boolean();  // A new Boolean object
+    var x5 = new Array();    // A new Array object
+    var x6 = new RegExp();   // A new RegExp object
+    var x7 = new Function(); // A new Function object
+    var x8 = new Date();     // A new Date object
+
+    document.getElementById("result5").innerHTML =
+        "x1: " + typeof x1 + "<br>" +
+        "x2: " + typeof x2 + "<br>" +
+        "x3: " + typeof x3 + "<br>" +
+        "x4: " + typeof x4 + "<br>" +
+        "x5: " + typeof x5 + "<br>" +
+        "x6: " + typeof x6 + "<br>" +
+        "x7: " + typeof x7 + "<br>" +
+        "x8: " + typeof x8 + "<br>";
+</script>
+</body>
+</html>
