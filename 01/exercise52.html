@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Object Methods</title>
+</head>
+<body>
+<h1>Accessing Object Methods</h1>
+<p>You will typically describe fullName() as a method of the person object, and fullName as a property.</p>
+<p id="result1"></p>
+<p id="result2"></p>
+
+<h1>Adding New Methods</h1>
+<p>Adding methods to an object is done inside the constructor function:</p>
+<p id="result3"></p>
+
+<script>
+    /**
+     * @file JavaScript Object Methods
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * Creating a JavaScript Object.
+     */
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    document.getElementById("result1").innerHTML = person.fullName();
+    document.getElementById("result2").innerHTML = person.fullName;
+
+    /**
+     * 生成一个人对象
+     * @param {string} firstName
+     * @param {string} lastName
+     * @param {number} age
+     * @param {string} eyeColor
+     */
+    function personObject(firstName, lastName, age, eyeColor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.eyeColor = eyeColor;
+        this.changeName = function (name) {
+            this.lastName = name;
+        }
+    }
+    var myMother = new personObject("Sally", "Rally", 48, "green");
+    myMother.changeName("Doe");
+    document.getElementById("result3").innerHTML = "My mother's last name is " + myMother.lastName;
+</script>
+</body>
+</html>
