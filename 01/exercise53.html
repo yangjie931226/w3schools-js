@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Object Prototypes</title>
+</head>
+<body>
+<h1>Creating a Prototype</h1>
+<p id="result1"></p>
+
+<h1>Adding Properties and Methods to Objects</h1>
+<p id="result2"></p>
+<p id="result3"></p>
+
+<h1>Using the prototype Property</h1>
+<p id="result4"></p>
+<p id="result5"></p>
+
+<script>
+    /**
+     * @file JavaScript Object Prototypes
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * 生成一个人对象
+     * @param {string} first
+     * @param {string} last
+     * @param {number} age
+     * @param {string} eye
+     */
+    function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+    var myFather = new Person("John", "Doe", 50, "blue");
+    var myMother = new Person("Sally", "Rally", 48, "green");
+    document.getElementById("result1").innerHTML = "My father is " + myFather.age + ". My mother is " + myMother.age;
+
+    /**
+     * Adding a Property to an Object
+     */
+    myFather.nationality = "English";
+    document.getElementById("result2").innerHTML = "My father is " + myFather.nationality;
+
+    /**
+     * Adding a Method to an Object
+     */
+    myFather.name = function () {
+        return this.firstName + " " + this.lastName;
+    };
+    document.getElementById("result3").innerHTML = "My father is " + myFather.name();
+
+    /**
+     * Using the prototype Property
+     */
+    Person.prototype.nationality = "English";
+    document.getElementById("result4").innerHTML = "My mother is " + myMother.nationality;
+    Person.prototype.name = function () {
+        return this.firstName + " " + this.lastName
+    };
+    document.getElementById("result5").innerHTML = "My mother is " + myMother.name();
+</script>
+</body>
+</html>
