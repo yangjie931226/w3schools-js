@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Function Definitions</title>
+</head>
+<body>
+<h1>Function Declarations</h1>
+<p>This example calls a function which performs a calculation and returns the result:</p>
+<p id="result1"></p>
+
+<h1>The Function() Constructor</h1>
+<p id="result2"></p>
+
+<h1>Self-Invoking Functions</h1>
+<p id="result3"></p>
+
+<script>
+    /**
+     * @file JavaScript Function Definitions
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * 计算两个数相乘的得数
+     * @param {number} a
+     * @param {number} b
+     * @return {number}
+     */
+    function myFunction(a, b) {
+        return a * b;
+    }
+    document.getElementById("result1").innerHTML = myFunction(4, 3);
+
+    /**
+     * The Function() Constructor
+     */
+    var myFunction = new Function("a", "b", "return a * b");
+    document.getElementById("result2").innerHTML = myFunction(4, 3);
+
+    /**
+     * Functions can be invoked automatically without being called
+     */
+    (function () {
+        document.getElementById("result3").innerHTML = "Hello! I called myself";
+    })();
+</script>
+</body>
+</html>
