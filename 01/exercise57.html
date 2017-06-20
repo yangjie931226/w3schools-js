@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Function Apply</title>
+</head>
+<body>
+<h1>The JavaScript apply() Method</h1>
+<p>This <strong>apply()</strong> example uses the fullName method of person on myObject:</p>
+<p id="result1"></p>
+
+<h1> The Difference Between call() and apply()</h1>
+<p>This example returns the highest number in a list of number arguments:</p>
+<p id="result2"></p>
+<p>This example returns the highest number in an array of numbers:</p>
+<p id="result3"></p>
+
+<script>
+    /**
+     * @file JavaScript Function Apply
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * The apply() method is similar to the call() method:
+     */
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    var myObject = {
+        firstName: "Mary",
+        lastName: "Doe"
+    };
+    x = person.fullName.apply(myObject);
+    document.getElementById("result1").innerHTML = x;
+
+    document.getElementById("result2").innerHTML = Math.max(1, 2, 3);
+    document.getElementById("result3").innerHTML = Math.max.apply(null, [1, 2, 3]);
+
+</script>
+</body>
+</html>
