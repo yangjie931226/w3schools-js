@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Closures</title>
+</head>
+<body>
+<h1>Global Variables</h1>
+<p>A function can access variables defined inside the function:</p>
+<button type="button" onclick="myFunction()">Click Me!</button>
+<p id="result1"></p>
+<p>A function can access variables defined outside the function:</p>
+<button type="button" onclick="myFunction1()">Click Me!</button>
+<p id="result2"></p>
+
+<h1>A Counter Dilemma</h1>
+<p>Counting with a global variable.</p>
+<button type="button" onclick="myFunction3()">Count!</button>
+<p id="result3"></p>
+
+<script>
+    /**
+     * @file JavaScript Closures
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * 计算4乘4在页面中显示得数
+     */
+    function myFunction() {
+        var a = 4;
+        document.getElementById("result1").innerHTML = a * a;
+    }
+
+    var b = 4;
+
+    /**
+     * 计算4乘4在页面中显示得数
+     */
+    function myFunction1() {
+        document.getElementById("result2").innerHTML = b * b;
+    }
+
+    var counter = 0;
+    /**
+     * 计数器加1
+     * @return {number}
+     */
+    function add() {
+        return counter += 1;
+    }
+
+    /**
+     * 在页面中显示计数器结果
+     */
+    function myFunction3() {
+        document.getElementById("result3").innerHTML = add();
+    }
+</script>
+</body>
+</html>
