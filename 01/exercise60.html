@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Window Navigator</title>
+</head>
+<body>
+<h1>Browser Cookies</h1>
+<p>The cookieEnabled property returns true if cookies are enabled:</p>
+<p id="result1"></p>
+
+<h1>The Navigator Object</h1>
+<p>The appName property returns the application name of the browser:</p>
+<p id="result2"></p>
+<script>
+    /**
+     * @file JavaScript Window Navigator
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    document.getElementById("result1").innerHTML = "navigator.cookieEnabled is " + navigator.cookieEnabled;
+
+    document.getElementById("result2").innerHTML = "navigator.appName is " + navigator.appName;
+
+</script>
+</body>
+</html>
