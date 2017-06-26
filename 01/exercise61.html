@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Timing Events</title>
+</head>
+<body>
+<h1>The setTimeout() Method</h1>
+<p>Click "Try it". Wait 3 seconds, and the page will alert "Hello".</p>
+<button onclick="setTimeout(myFunction, 3000);">Try it</button>
+
+<p>Click "Try it". Wait 3 seconds. The page will alert "Hello".</p>
+<p>Click "Stop" to prevent the first function to execute.</p>
+<p>(You must click "Stop" before the 3 seconds are up.)</p>
+<button onclick="myVar = setTimeout(myFunction, 3000)">Try it</button>
+<button onclick="clearTimeout(myVar)">Stop it</button>
+
+<p>The setInterval() Method</p>
+<p>A script on this page starts this clock:</p>
+<p id="result1"></p>
+<script>
+    /**
+     * @file JavaScript Timing Events
+     * @author 杨杰
+     * @copyright 2014-2017 海量云图（北京）数据技术有限公司
+     */
+
+    /**
+     * 弹出Hello框
+     */
+    function myFunction() {
+        alert('Hello');
+    }
+
+    setInterval(myTimer, 1000);
+    /**
+     * 在html页面显示时间
+     */
+    function myTimer() {
+        var d = new Date();
+        document.getElementById("result1").innerHTML = d.toLocaleTimeString();
+    }
+</script>
+</body>
+</html>
